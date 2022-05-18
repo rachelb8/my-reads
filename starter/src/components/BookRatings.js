@@ -7,6 +7,7 @@ const BookRatings = ({ratings}) => {
     const numHalfStars = Math.ceil(ratings % 1);
     const numStarsLeft = Math.ceil(outOfNumStars - (numFullStars + numHalfStars));
 
+    // Display correct number of each star icon given the book's rating
     return (
         <span>
             {

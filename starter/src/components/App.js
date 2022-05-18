@@ -9,6 +9,7 @@ function App() {
   const [books, setBooks] = useState([]);
   const [searchedBooks, setSearchBooks] = useState([]);
 
+  // Get all books on shelves currently
   useEffect(() => {
     const getBooks = async() => {
       const response = await BooksAPI.getAll();
@@ -18,6 +19,7 @@ function App() {
     getBooks();
   }, [])
 
+  // Update a book's shelf and replace it in list of current books with new information
   const changeShelf = (book, shelf) => {
     const update = async () => {
       BooksAPI.update(book, shelf);
@@ -30,6 +32,8 @@ function App() {
     update();
   };
   
+  // Search for new books and only set searched books if a correct
+  // response is given from the API or there was a valid query
   const searchBooks = (query) => {
     const search = async () => {
       const response = await BooksAPI.search(query);

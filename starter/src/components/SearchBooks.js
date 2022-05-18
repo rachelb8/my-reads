@@ -13,6 +13,7 @@ const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
         updateQuery("");
     };
 
+    // Cross check what shelf the searched book corresponds too 
     let searchedBooksWithShelves = []
     if(searchedBooks && searchedBooks.length){
       searchedBooksWithShelves = searchedBooks.map(searchedBook => {
@@ -24,6 +25,7 @@ const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
       })
     }
     
+    // Show error message if there are no books found with a query or if there is no query
     const shouldShowErrorMessage = searchedBooksWithShelves.length === 0 || query.length === 0;
   
     return (
