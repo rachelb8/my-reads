@@ -1,6 +1,6 @@
 # MyReads Project
 
-A reading library application that allows the user to place books onto different shelves: `Currently Reading`, `Want to Read`, and `Read`. There is also a search functionality to add a new book to a certain shelf. In addition, the user can click on the `Show Book Details` button to reveal more information about a book including the average rating if it is available from the API. 
+A reading library application that allows the user to place books onto different shelves: `Currently Reading`, `Want to Read`, and `Read`. There is also a search functionality to add a new book to a certain shelf. In addition, the user can click on the `Show Book Details` button to reveal more information about a book including the average rating or preview link if available from the API. 
 
 ## TL;DR
 
