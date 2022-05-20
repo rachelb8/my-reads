@@ -42,7 +42,7 @@ To get started developing right away:
     │   ├── arrow-drop-down.svg
     │   └── default-thumbnail.svg
     └── utils
-    │   ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    │   └── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
 
