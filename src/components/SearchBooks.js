@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { DebounceInput } from 'react-debounce-input';
 import PropTypes from "prop-types";
 import BooksGrid from "./BooksGrid";
 
 const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
     const [query, setQuery] = useState("");
     const updateQuery = ((query) => {
-        setQuery();
+        setQuery(query);
         onSearchBooks(query);
     })
 
@@ -36,7 +37,9 @@ const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
                 Close
             </Link>
             <div className="search-books-input-wrapper">
-              <input
+              <DebounceInput
+                minLength={3}
+                debounceTimeout={300}
                 type="text"
                 placeholder="Search by title, author, or ISBN"
                 value={query}

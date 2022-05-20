@@ -36,18 +36,17 @@ function App() {
   // response is given from the API or there was a valid query
   const searchBooks = (query) => {
     const search = async () => {
-      query.trim();
       const response = await BooksAPI.search(query);
 
       if(response && !response.error){
         setSearchBooks(response);
       } else {
-        debugger;
         setSearchBooks([]);
       }
     };
 
     if(query && query.length > 0){
+      query = query.trim();
       search();
     } else {
       setSearchBooks([]);
