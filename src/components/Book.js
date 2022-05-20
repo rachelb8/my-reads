@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import ChangeBookshelf from "./ChangeBookshelf";
 import BookDetailsModal from "./BookDetailsModal";
 
@@ -26,6 +27,12 @@ const Book = ({ book, shelfValue, onChangeShelf}) => {
             <BookDetailsModal book={book}/>
         </li>
   );
+};
+
+Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    shelfValue: PropTypes.string.isRequired,
+    onChangeShelf: PropTypes.func.isRequired,
 };
 
 export default Book;

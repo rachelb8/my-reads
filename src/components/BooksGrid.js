@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import Book from "./Book";
+
 
 const BooksGrid = ({books, onChangeShelf}) => {
     return ( 
@@ -8,6 +10,11 @@ const BooksGrid = ({books, onChangeShelf}) => {
             ))}
         </ol>
     );
+};
+
+BooksGrid.propTypes = {
+    books: PropTypes.array.isRequired,
+    onChangeShelf: PropTypes.func.isRequired,
 };
 
 export default BooksGrid;

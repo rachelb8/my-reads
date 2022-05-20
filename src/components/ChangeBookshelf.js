@@ -1,11 +1,12 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const ChangeBookshelf = ({book, shelfValue, onChangeShelf}) => {
     const [shelf, setShelf] = useState(shelfValue);
 
     const updateShelf= ((newShelf) => {
         setShelf(newShelf);
-        onChangeShelf(book, newShelf)
+        onChangeShelf(book, newShelf);
     })
   
     return (
@@ -24,6 +25,12 @@ const ChangeBookshelf = ({book, shelfValue, onChangeShelf}) => {
         </div>
     );
     
+};
+
+ChangeBookshelf.propTypes = {
+    book: PropTypes.object.isRequired,
+    shelfValue: PropTypes.string.isRequired, 
+    onChangeShelf: PropTypes.func.isRequired,
 };
 
 export default ChangeBookshelf;

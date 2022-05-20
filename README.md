@@ -12,22 +12,37 @@ To get started developing right away:
 ## What You're Getting
 
 ```bash
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── CODEOWNERS # Using Udacity Starter Code
+├── LICENSE.txt # Udacity Licensing Agreement
+├── README.md # This file
+├── SEARCHTERMS.md # The whitelisted short collection of available search terms for you to use with the app
+├── package.json # npm package manager file
+├── package-lock.json # dependency lock file
+├── yarn.lock # dependency lock file
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
+│   ├── favicon.ico # React Icon
 │   └── index.html # DO NOT MODIFY
 └── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
+    └── components
+    │   ├── App.js # Root of the app
+    │   ├── Book.js # displays book information
+    │   ├── BookDetailsModal.js # displays more book information
+    │   ├── BookRatings.js # displays the average book rating with star icons
+    │   ├── BooksGrid.js # displays multiple books 
+    │   ├── Bookshelf.js # displays a BookGrid component based on the books on that shelf 
+    │   ├── ChangeBookshelf.js # handles changing a book's shelf
+    │   ├── ListBooks.js # displays all Bookshelf components 
+    │   └── SearchBooks.js # displays a BookGrid component based on the query searched
+    └── css
+    │   ├── App.css # Styles for the app
+    │   └── index.css # Global styles
+    └── icons # Helpful images for the app
     │   ├── add.svg
     │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
+    │   ├── arrow-drop-down.svg
+    │   └── default-thumbnail.svg
+    └── utils
+    │   ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
 
@@ -35,7 +50,7 @@ Remember that good React design practice is to create new JS files for each comp
 
 ## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+To simplify the development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
 
 - [`getAll`](#getall)
 - [`update`](#update)

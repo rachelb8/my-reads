@@ -1,8 +1,9 @@
 import React from "react"; 
 import { FaStar, FaRegStar, FaStarHalfAlt} from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const BookRatings = ({ratings}) => {
-    const outOfNumStars = 5
+    const outOfNumStars = 5;
     const numFullStars = Math.floor(ratings);
     const numHalfStars = Math.ceil(ratings % 1);
     const numStarsLeft = Math.ceil(outOfNumStars - (numFullStars + numHalfStars));
@@ -29,5 +30,9 @@ const BookRatings = ({ratings}) => {
     
     );
 }
+
+BookRatings.propTypes = {
+    ratings: PropTypes.number.isRequired,
+};
 
 export default BookRatings;

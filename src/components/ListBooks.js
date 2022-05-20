@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Bookshelf from "./Bookshelf";
 
 const ListBooks = ({books, onChangeShelf}) => {
@@ -32,6 +33,11 @@ const ListBooks = ({books, onChangeShelf}) => {
           </div>
         </div>
     );
-}
+};
+
+ListBooks.propTypes = {
+  books: PropTypes.array.isRequired,
+  onChangeShelf: PropTypes.func.isRequired,
+};
 
 export default ListBooks;

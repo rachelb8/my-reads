@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Modal from 'react-modal';
 import BookRatings from "./BookRatings.js";
 
@@ -37,5 +38,10 @@ const BookDetailsModal = ({book}) => {
       </div>
     );
 }
+
+BookDetailsModal.propTypes = {
+  book: PropTypes.object.isRequired,
+};
+
 
 export default BookDetailsModal;

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import BooksGrid from "./BooksGrid";
 
 const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
     const [query, setQuery] = useState("");
     const updateQuery = ((query) => {
-        setQuery(query.trim())
-        onSearchBooks(query)
+        setQuery();
+        onSearchBooks(query);
     })
 
     const clearQuery = () => {
@@ -19,9 +20,9 @@ const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
       searchedBooksWithShelves = searchedBooks.map(searchedBook => {
         const bookIds = books.map(book => book.id);
         if(bookIds.includes(searchedBook.id)){
-          searchedBook.shelf = books.find(book => book.id === searchedBook.id).shelf
+          searchedBook.shelf = books.find(book => book.id === searchedBook.id).shelf;
         }
-        return searchedBook
+        return searchedBook;
       })
     }
     
@@ -51,5 +52,13 @@ const SearchBooks = ({books, searchedBooks, onSearchBooks, onChangeShelf}) => {
     );
 
 };
+
+SearchBooks.propTypes = {
+  books: PropTypes.array.isRequired,
+  searchedBooks: PropTypes.array.isRequired, 
+  onSearchBooks: PropTypes.func.isRequired,
+  onChangeShelf: PropTypes.func.isRequired,
+};
+
 
 export default SearchBooks;
